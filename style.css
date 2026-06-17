@@ -162,13 +162,13 @@ left:-9px;
 top:5px;
 }
 
-.job h3{
-color:#19376d;
-margin-bottom:5px;
+.job h3 a{
+    text-decoration:none;
+    color:#0b2447;
 }
 
-.job p{
-margin-bottom:10px;
+.job h3 a:hover{
+    color:#ffb703;
 }
 
 /* ===== LISTS ===== */
