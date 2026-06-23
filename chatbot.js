@@ -4,7 +4,7 @@ let input=document.getElementById("userInput");
 
 let question=input.value;
 
-let response=await fetch("/api/chat",{
+let response=await fetch("/api/chat.js",{
 method:"POST",
 headers:{
 "Content-Type":"application/json"
