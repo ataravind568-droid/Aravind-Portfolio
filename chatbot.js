@@ -1,5 +1,7 @@
 window.sendMessage = async function() {
 
+    alert("Button clicked");
+
 let input=document.getElementById("userInput");
 
 let question=input.value;
