@@ -1,66 +1,26 @@
-export default async function handler(req, res) {
+async function sendMessage(){
 
-  const question = req.body.question;
+let input=document.getElementById("userInput");
 
-  const response = await fetch(
-    "https://api.openai.com/v1/chat/completions",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`
-      },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        messages: [
-          {
-            role: "system",
-            content: `
-You are Aravind AI.
+let question=input.value;
 
-Answer only questions about Aravind Kapilavayi.
+let response=await fetch("/api/chat",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+question
+})
+});
 
-Aravind is a Principal Quality Manager with 15+ years of experience.
+let data=await response.json();
 
-He has worked at:
-QNX BlackBerry
-ZF
-Infosys
-Hyundai Mobis
-Honeywell
-Cyient
-DRDO
+document.getElementById("chat-messages").innerHTML +=
+"<p><b>You:</b> "+question+"</p>";
 
-Expertise:
-ASPICE
-ISO 26262
-ISO 21434
-ISO 9001
-ISO 27001
-CMMI
-Functional Safety
-Cybersecurity
+document.getElementById("chat-messages").innerHTML +=
+"<p><b>Aravind AI:</b> "+data.answer+"</p>";
 
-Certifications:
-ASPICE Assessor
-ISO Lead Auditor
-Six Sigma Black Belt
-SAFe Agilist
-Scrum Master
-`
-          },
-          {
-            role: "user",
-            content: question
-          }
-        ]
-      })
-    });
-
-  const data = await response.json();
-
-  res.status(200).json({
-    answer: data.choices[0].message.content
-  });
-
+input.value="";
 }
