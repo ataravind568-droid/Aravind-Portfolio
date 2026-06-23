@@ -284,6 +284,24 @@ font-size:1.5rem;
 
 .chat-input{
     display:flex;
-    padding:10px;
+    align-items:center;
     gap:10px;
+    padding:10px;
+}
+
+.chat-input input{
+    flex:1;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.chat-input button{
+    width:70px;
+    padding:10px;
+    background:#ffb703;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
 }
