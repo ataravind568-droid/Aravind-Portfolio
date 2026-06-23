@@ -267,21 +267,6 @@ font-size:1.5rem;
     padding:15px;
 }
 
-#userInput{
-    width:70%;
-    padding:10px;
-    border:1px solid #ccc;
-    outline:none;
-}
-
-#chat-container button{
-    width:25%;
-    padding:10px;
-    background:#ffb703;
-    border:none;
-    cursor:pointer;
-}
-
 .chat-input{
     display:flex;
     align-items:center;
