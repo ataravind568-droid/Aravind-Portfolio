@@ -1,4 +1,4 @@
-async function sendMessage(){
+window.sendMessage = async function() {
 
 let input=document.getElementById("userInput");
 
