@@ -240,3 +240,17 @@ font-size:1.5rem;
 }
 
 }
+/* ===== CHATBOT ===== */
+
+#chat-container{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:350px;
+    background:white;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(0,0,0,.2);
+    overflow:hidden;
+    z-index:1000;
+}
+
