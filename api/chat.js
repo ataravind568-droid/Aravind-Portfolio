@@ -57,16 +57,18 @@ Scrum Master
       })
     });
 
-  const data = await response.json();
+const data = await response.json();
 
 console.log(data);
 
 if (!response.ok) {
-    return res.status(500).json({
-        answer: JSON.stringify(data)
-    });
+  console.log("OpenAI error:", data);
+
+  return res.status(500).json({
+    answer: JSON.stringify(data)
+  });
 }
 
 res.status(200).json({
-    answer: data.choices[0].message.content
+  answer: data.choices[0].message.content
 });
