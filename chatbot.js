@@ -14,7 +14,13 @@ question
 })
 });
 
-let data=await response.json();
+if (!response.ok) {
+    alert("API Error");
+    console.log(await response.text());
+    return;
+}
+
+let data = await response.json();
 
 document.getElementById("chat-messages").innerHTML +=
 "<p><b>You:</b> "+question+"</p>";
